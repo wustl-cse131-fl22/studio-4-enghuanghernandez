@@ -33,6 +33,8 @@ public class InterpretDrawingFile {
 		double parameter2 = in.nextDouble();
 		double parameter3 = in.nextDouble();
 		double parameter4 = in.nextDouble();
+		double parameter5 = in.nextDouble();
+		double parameter6 = in.nextDouble();
 		
 		StdDraw.setPenColor(redComponent, greenComponent, blueComponent);
 
@@ -49,6 +51,14 @@ public class InterpretDrawingFile {
 				StdDraw.filledRectangle(parameter1, parameter2, parameter3, parameter4);
 			} else {
 				StdDraw.rectangle(parameter1, parameter2, parameter3, parameter4);
+			}
+		} else if(shape.equals("triangle")) {
+			double[] x = {parameter1, parameter3, parameter5};
+			double[] y = {parameter2, parameter4, parameter6};
+			if (isFilled) {
+				StdDraw.filledPolygon(x, y);
+			} else {
+				StdDraw.polygon(x, y);
 			}
 		}
 		// System.out.println(shape + " " + redComponent + " " + isFilled);
