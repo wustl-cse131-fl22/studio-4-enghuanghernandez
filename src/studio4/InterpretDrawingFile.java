@@ -33,13 +33,22 @@ public class InterpretDrawingFile {
 		double parameter2 = in.nextDouble();
 		double parameter3 = in.nextDouble();
 		double parameter4 = in.nextDouble();
+		
+		StdDraw.setPenColor(redComponent, greenComponent, blueComponent);
 
 		if (shape.equals("ellipse")) {
 			if (isFilled) {
 				StdDraw.filledEllipse(parameter1, parameter2, parameter3, parameter4);
 			} else {
-				StdDraw.setPenColor(redComponent, greenComponent, blueComponent);
 				StdDraw.ellipse(parameter1, parameter2, parameter3, parameter4);
+			}
+		}
+		
+		else if(shape.equals("rectangle")) {
+			if (isFilled) {
+				StdDraw.filledRectangle(parameter1, parameter2, parameter3, parameter4);
+			} else {
+				StdDraw.rectangle(parameter1, parameter2, parameter3, parameter4);
 			}
 		}
 		// System.out.println(shape + " " + redComponent + " " + isFilled);
